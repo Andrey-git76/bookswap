@@ -46,3 +46,24 @@
 cd frontend
 npm install
 npm run dev
+```
+
+## Скриншоты
+
+### Главная
+![Главная](docs/screenshots/home.png)
+
+### Каталог
+![Каталог](docs/screenshots/catalog.png)
+
+### Книга
+![Книга](docs/screenshots/book.png)
+
+### Мои брони
+![Мои брони](docs/screenshots/my-bookings.png)
+
+### Профиль
+![Профиль](docs/screenshots/profile.png)
+
+### Вход
+![Вход](docs/screenshots/login.png)
