@@ -51,19 +51,19 @@ npm run dev
 ## Скриншоты
 
 ### Главная
-![Главная](docs/screenshots/home.png)
+![Главная](docs/screenshots/Home.png)
 
 ### Каталог
-![Каталог](docs/screenshots/catalog.png)
+![Каталог](docs/screenshots/Catalog.png)
 
 ### Книга
-![Книга](docs/screenshots/book.png)
+![Книга](docs/screenshots/Book.png)
 
 ### Мои брони
-![Мои брони](docs/screenshots/my-bookings.png)
+![Мои брони](docs/screenshots/My-bookings.png)
 
 ### Профиль
-![Профиль](docs/screenshots/profile.png)
+![Профиль](docs/screenshots/Profile.png)
 
 ### Вход
-![Вход](docs/screenshots/login.png)
+![Вход](docs/screenshots/Login.png)
