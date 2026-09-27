@@ -1,11 +1,20 @@
-import { StrictMode } from 'react';
-import { createRoot } from 'react-dom/client';
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import { RouterProvider } from 'react-router-dom';
+import { CssBaseline, ThemeProvider, createTheme } from '@mui/material';
+import { router } from './app/router';
 
-createRoot(document.getElementById('root')!).render(
-  <StrictMode>
-    <div style={{ padding: 40, fontFamily: 'sans-serif' }}>
-      <h1>BookSwap</h1>
-      <p>Проект в разработке. Скоро здесь будет интерфейс.</p>
-    </div>
-  </StrictMode>,
+const theme = createTheme({
+  palette: {
+    primary: { main: '#1976d2' },
+  },
+});
+
+ReactDOM.createRoot(document.getElementById('root')!).render(
+  <React.StrictMode>
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <RouterProvider router={router} />
+    </ThemeProvider>
+  </React.StrictMode>
 );
