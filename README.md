@@ -67,3 +67,23 @@ npm run dev
 
 ### Вход
 ![Вход](docs/screenshots/Login.jpg)
+
+## Backend (ЛР №2)
+
+### Стек
+- Python 3.12 + FastAPI
+- PostgreSQL + SQLAlchemy 2.0
+- Alembic (миграции)
+- Pydantic (валидация данных)
+
+### Запуск backend
+
+```bash
+cd backend
+python -m venv .venv
+# Для Windows: .venv\Scripts\activate
+pip install -r requirements.txt
+docker compose up -d
+alembic upgrade head
+uvicorn src.main:app --reload
+```
