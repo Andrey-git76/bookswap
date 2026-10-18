@@ -87,3 +87,10 @@ docker compose up -d
 alembic upgrade head
 uvicorn src.main:app --reload
 ```
+### Скриншоты Backend
+
+**Swagger UI:**
+![Swagger](docs/screenshots/Swagger.jpg)
+
+**База данных (Adminer):**
+![Adminer](docs/screenshots/Adminer.jpg)
