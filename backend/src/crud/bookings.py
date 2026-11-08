@@ -1,6 +1,7 @@
 from sqlalchemy.orm import Session
 from src.models.booking import Booking
 from src.schemas.bookings import BookingCreate, BookingUpdate
+from fastapi import HTTPException
 
 
 def get_booking(db: Session, booking_id: int) -> Booking | None:
@@ -12,6 +13,20 @@ def get_user_bookings(db: Session, user_id: int) -> list[Booking]:
 
 
 def create_booking(db: Session, data: BookingCreate) -> Booking:
+    # 1. Проверяем, нет ли уже АКТИВНОЙ брони на эту книгу
+    existing_booking = db.query(Booking).filter(
+        Booking.book_id == data.book_id,
+        Booking.status == "active"
+    ).first()
+    
+    # Если есть — выдаем ошибку 400 (Bad Request)
+    if existing_booking:
+        raise HTTPException(
+            status_code=400, 
+            detail="Эта книга уже забронирована другим пользователем"
+        )
+
+    # 2. Если брони нет — создаем новую
     booking = Booking(**data.model_dump())
     db.add(booking)
     db.commit()

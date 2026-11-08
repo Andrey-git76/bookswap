@@ -6,13 +6,13 @@ interface Props {
   book: Book;
 }
 
-const statusLabels: Record<Book['status'], string> = {
+const statusLabels: Record<string, string> = {
   available: 'Доступна',
   booked: 'Забронирована',
   unavailable: 'Недоступна',
 };
 
-const statusColors: Record<Book['status'], 'success' | 'warning' | 'default'> = {
+const statusColors: Record<string, 'success' | 'warning' | 'default'> = {
   available: 'success',
   booked: 'warning',
   unavailable: 'default',
@@ -31,8 +31,8 @@ export const BookCard = ({ book }: Props) => {
           {book.author}
         </Typography>
         <Chip
-          label={statusLabels[book.status]}
-          color={statusColors[book.status]}
+          label={statusLabels[book.status] || book.status}
+          color={statusColors[book.status] || 'default'}
           size="small"
           sx={{ mb: 2 }}
         />
@@ -40,7 +40,7 @@ export const BookCard = ({ book }: Props) => {
           {book.description}
         </Typography>
         <Typography variant="caption" color="text.secondary">
-          Место выдачи: {book.pickupLocation}
+          Место выдачи: {book.pickup_location || 'Не указано'}
         </Typography>
       </CardContent>
       <Button

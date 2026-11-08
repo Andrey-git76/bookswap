@@ -6,6 +6,7 @@ import { BookPage } from '../pages/BookPage';
 import { MyBookingsPage } from '../pages/MyBookingsPage';
 import { ProfilePage } from '../pages/ProfilePage';
 import { LoginPage } from '../pages/LoginPage';
+import { AddBookPage } from '../pages/AddBookPage'; 
 
 export const router = createBrowserRouter([
   {
@@ -14,6 +15,7 @@ export const router = createBrowserRouter([
     children: [
       { index: true, element: <HomePage /> },
       { path: 'catalog', element: <CatalogPage /> },
+      { path: 'books/new', element: <AddBookPage /> }, 
       { path: 'books/:id', element: <BookPage /> },
       { path: 'my-bookings', element: <MyBookingsPage /> },
       { path: 'profile', element: <ProfilePage /> },
