@@ -1,3 +1,5 @@
+export type BookingStatus = 'active' | 'returned' | 'overdue';
+
 export interface Booking {
   id: number;
   bookId: number;
@@ -5,5 +7,5 @@ export interface Booking {
   userId: number;
   startDate: string;
   endDate: string;
-  status: 'active' | 'returned' | 'overdue';
+  status: BookingStatus;
 }

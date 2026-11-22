@@ -1,13 +1,13 @@
+export type BookStatus = 'available' | 'booked' | 'unavailable';
+
 export interface Book {
   id: number;
   title: string;
   author: string;
   description: string;
   coverUrl?: string;
-  status: 'available' | 'booked' | 'unavailable';
+  status: BookStatus;
   ownerId: number;
   ownerName: string;
   pickupLocation: string;
 }
-
-export type BookStatus = Book['status'];

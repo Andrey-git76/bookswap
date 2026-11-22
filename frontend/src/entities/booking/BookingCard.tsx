@@ -1,31 +1,50 @@
-import { Card, CardContent, Typography, Chip } from '@mui/material';
-import type { Booking } from './types';
+import { Card, CardContent, Typography, Chip, Box, Button } from '@mui/material';
+import type { Booking, BookingStatus } from './types';
 
-interface Props {
+interface BookingCardProps {
   booking: Booking;
+  onCancel?: (bookingId: number) => void;
 }
 
-const statusLabels: Record<Booking['status'], string> = {
+const statusLabels: Record<BookingStatus, string> = {
   active: 'Активна',
   returned: 'Возвращена',
   overdue: 'Просрочена',
 };
 
-export const BookingCard = ({ booking }: Props) => {
+const statusColors: Record<BookingStatus, 'primary' | 'default' | 'error'> = {
+  active: 'primary',
+  returned: 'default',
+  overdue: 'error',
+};
+
+export const BookingCard = ({ booking, onCancel }: BookingCardProps) => {
   return (
-    <Card>
+    <Card sx={{ height: '100%' }}>
       <CardContent>
-        <Typography variant="h6">
-          Книга (ID: {booking.book_id})
+        <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: 1, mb: 1 }}>
+          <Typography variant="h6">
+            {booking.bookTitle}
+          </Typography>
+          <Chip
+            label={statusLabels[booking.status]}
+            color={statusColors[booking.status]}
+            size="small"
+          />
+        </Box>
+        <Typography variant="body2" color="text.secondary" sx={{ mb: 2 }}>
+          С {booking.startDate} по {booking.endDate}
         </Typography>
-        <Typography variant="body2" color="text.secondary" sx={{ mb: 1 }}>
-          С {booking.start_date} по {booking.end_date}
-        </Typography>
-        <Chip
-          label={statusLabels[booking.status] || booking.status}
-          color={booking.status === 'active' ? 'primary' : 'default'}
-          size="small"
-        />
+        {booking.status === 'active' && onCancel && (
+          <Button
+            size="small"
+            variant="outlined"
+            color="warning"
+            onClick={() => onCancel(booking.id)}
+          >
+            Отменить бронь
+          </Button>
+        )}
       </CardContent>
     </Card>
   );
