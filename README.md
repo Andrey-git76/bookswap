@@ -125,5 +125,5 @@ uvicorn src.main:app --reload
 ![Мои брони](docs/screenshots/LR3/Bookings_LR3.jpg)
 
 **Вход:**
-![Вход](docs/screenshots/LR3/Login_LR3_1.png)
+![Вход](docs/screenshots/LR3/Login_LR3_1.jpg)
 ![Вход(Ошибка)](docs/screenshots/LR3/Login_LR3_2.jpg)
