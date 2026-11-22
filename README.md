@@ -114,16 +114,16 @@ uvicorn src.main:app --reload
 
 ### Скриншоты Frontend (ЛР3)
 **Главная:**
-![Главная](docs/screenshots/Home_LR3.png)
+![Главная](docs/screenshots/LR3/Home_LR3.jpg)
 
 **Каталог книг:**
-![Каталог(все)](docs/screenshots/Catalog_LR3_1.png)
-![Каталог(Доступны)](docs/screenshots/Catalog_LR3_2.png)
-![Каталог(Заняты)](docs/screenshots/Catalog_LR3_3.png)
+![Каталог(все)](docs/screenshots/LR3/Catalog_LR3_1.jpg)
+![Каталог(Доступны)](docs/screenshots/LR3/Catalog_LR3_2.jpg)
+![Каталог(Заняты)](docs/screenshots/LR3/Catalog_LR3_3.jpg)
 
 **Мои брони:**
-![Мои брони](docs/screenshots/Bookings_LR3.png)
+![Мои брони](docs/screenshots/LR3/Bookings_LR3.jpg)
 
 **Вход:**
-![Вход](docs/screenshots/Login_LR3_1.png)
-![Вход(Ошибка)](docs/screenshots/Login_LR3_2.png)
+![Вход](docs/screenshots/LR3/Login_LR3_1.png)
+![Вход(Ошибка)](docs/screenshots/LR3/Login_LR3_2.jpg)
